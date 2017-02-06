@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="RU-ru">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,98 +10,122 @@
   </head>
   <body>
     <div class="nav-layout">
-    <div class="nav-container">
-        <div class="top">
-            <button id="nav-toggler" class="nav-toggler" tabindex="-1"><img src="./img/menu.png" height="20"></button>
+    <nav class="nav">
+        <div class="nav__top">
+            <button id="nav-toggler" class="nav__toggler" tabindex="-1"><img src="./img/menu.png" height="20" alt="menu button"></button>
         </div>
-        <div class="nav-links">
-                <a class="menu-link" tabindex="-1" href="https://vk.com/road2esports"><img src="./img/vk_icon_sm.png" height="20" alt="vk icon"></a>
-                <a class="menu-link" tabindex="-1" href="https://www.twitch.tv/linkolnlk"><img src="./img/twitch_icon_sm.png" height="20" alt="twitch icon"></a>
-                <a class="menu-link" tabindex="-1" href="https://www.youtube.com/channel/UCvYMnJMW0jpikbXUhzY5VLw"><img src="./img/ytube_icon_sm.png" height="20" alt="youtube icon"></a>
+        <div class="nav__links">
+                <a class="nav__link nav__link--inline" tabindex="-1" href="https://vk.com/road2esports"><img src="./img/vk_icon_sm.png" height="20" alt="vk icon"></a>
+                <a class="nav__link nav__link--inline" tabindex="-1" href="https://www.twitch.tv/linkolnlk"><img src="./img/twitch_icon_sm.png" height="20" alt="twitch icon"></a>
+                <a class="nav__link nav__link--inline" tabindex="-1" href="https://www.youtube.com/channel/UCvYMnJMW0jpikbXUhzY5VLw"><img src="./img/ytube_icon_sm.png" height="20" alt="youtube icon"></a>
         </div>
-        <div id="toggle-block" class="toggle">
-            <ul class="item-list">
-                <li class="item"><a class="menu-link m-list" href="javascript:void(0);">БЛОГ</a></li>
-                <li class="item"><a class="menu-link m-list" href="javascript:void(0);">О ПРОЕКТЕ</a></li>
-                <li class="item"><a class="menu-link m-list" href="javascript:void(0);">ДОНАТ</a></li>
-                <li class="item"><a class="menu-link m-list" href="javascript:void(0);">СМОТРЕТЬ</a></li>
-                <li class="item"><a class="menu-link m-list m-last" href="javascript:void(0);">МОИ СКИНЫ</a></li>
+        <div id="toggle-block" class="nav__toggle">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">БЛОГ</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--li" href="./about">О ПРОЕКТЕ</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">ДОНАТ</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">СМОТРЕТЬ</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--li nav__link--last" href="javascript:void(0);">МОИ СКИНЫ</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
 </div>
-    <div class="header">    
-    <h1>ROAD<span>2E</span>SPORTS</h1>
-</div>
-    <div class="content">
-    <div class="row">
-        <div class="first">
-    <div class="wrapper m-first">
-        <div class="block">
-            <div class="b-header">
-                <div class="b-header" style="background-image: url(./img/csgoteams.jpg)"></div>
-            </div>
-            <div class="b-body">
-                <div><span class="b-date">18 января 2017</span></div>
-                <h2>Pick'Em</h2>
-                <p>
-                    Пост посвящён Pick'Em челенджу на предстоящий "Мажор", который начнется уже 22 числа в Атланте. Пост будет довольно длинный, максимально попытаюсь объяснить свой выбор, 
-                    проанализировать решение. Сразу отмечаю, что я не профессиональный аналитик, моё мнение не претендует быть одним единственным верным и не призываю вас повторять за мной. Начнём.
-                </p>
-            </div>
-        <div class="b-footer">
-            <a class="b-link" href="javascript:void(0);">читать полностью</a>
-        </div>
-        </div>
-    </div>
-    <div class="wrapper m-first m-next">
-        <div class="block">
-            <div class="b-header" style="background-image: url(./img/img_00001.jpg)"></div>
-            <div class="b-body">
-                <div><span class="b-date">13 января 2017</span></div>
-                <h2>Начало пути</h2>
-                <p>
-                    Небольшая статья о том, что это вообще такое, что за киберспорт, что за дорога, что за ноунэйм и что вообще тут происходит. Поехали.
-                </p>
-                <p class="b-last">
-                    Территория киберспорта в последние пару лет привлекает огромные массы и я был не исключением.
-                    Смотрел трансляции практически всех официальных матчей топовых коллективов, слушал студийную аналитику, участвовал в обсуждениях, делал прогнозы, учился играть на примере профессионалов, 
-                    брал от них какие-то...
-                </p>
-            </div>
-            <div class="b-footer">
-                <a class="b-link" href="javascript:void(0);">читать полностью</a>
+    <div class="header-layout layout-base">
+    <div class="layout-row">
+        <div class="layout-col">
+            <div class="header">    
+                <h1>ROAD<span>2E</span>SPORTS</h1>
             </div>
         </div>
     </div>
 </div>
-        <div class="second">
-    <div class="wrapper m-last">
-        <div class="block">
-            <div class="b-header" style="background-image: url(./img/eleague.jpg)">
-                <h3 class="bh-header">ELEAGUE Major 2017</h3>
-                <a class="bh-link" href="http://www.eleague.com/major/"></a>
+    <div class="page-layout layout-base">
+    <div class="layout-row">
+        <div class="layout-col page-col-main">
+            <div class="block">
+    <div class="block__header" style="background-image: url(./img/csgoteams.jpg)"></div>
+    <div class="block__body">
+        <div><span class="block__date">18 января 2017</span></div>
+        <h2 class="block__h2">Pick'Em</h2>
+        <p class="block__paragraph block__paragraph--last">
+            Пост посвящён Pick'Em челенджу на предстоящий "Мажор", который начнется уже 22 числа в Атланте. Пост будет довольно длинный, максимально попытаюсь объяснить свой выбор, 
+            проанализировать решение. Сразу отмечаю, что я не профессиональный аналитик, моё мнение не претендует быть одним единственным верным и не призываю вас повторять за мной. Начнём.
+        </p>
+    </div>
+<div class="block__footer">
+    <a class="block__footer-link" href="javascript:void(0);">читать полностью</a>
+</div>
+</div>
+<div class="block">
+    <div class="block__header" style="background-image: url(./img/csgoarena.jpg)"></div>
+    <div class="block__body">
+        <div><span class="block__date">13 января 2017</span></div>
+        <h2 class="block__h2">Начало пути</h2>
+        <p class="block__paragraph">
+            Небольшая статья о том, что это вообще такое, что за киберспорт, что за дорога, что за ноунэйм и что вообще тут происходит. Поехали.
+        </p>
+        <p class="block__paragraph block__paragraph--last">
+            Территория киберспорта в последние пару лет привлекает огромные массы и я был не исключением.
+            Смотрел трансляции практически всех официальных матчей топовых коллективов, слушал студийную аналитику, участвовал в обсуждениях, делал прогнозы, учился играть на примере профессионалов, 
+            брал от них какие-то...
+        </p>
+    </div>
+    <div class="block__footer">
+        <a class="block__footer-link" href="javascript:void(0);">читать полностью</a>
+    </div>
+</div>
+        </div>
+        <div class="layout-col page-col-aside">
+            <div class="sidebar">
+    <div class="sidebar-item">
+        <div class="sidebar-item__header">
+            <h3>С полей разработки</h3>
+        </div>
+        <div class="sidebar-item__body">
+            <p class="sidebar-item__paragraph sidebar-item__paragraph--last"><span class="date-text">06 февраля 2017</span></p>
+            <p class="sidebar-item__paragraph sidebar-item__paragraph--last">Теперь работает ссылка <a href="./about">О ПРОЕКТЕ</a></p>
+            <p class="sidebar-item__paragraph sidebar-item__paragraph--last">=)</p>
+        </div>
+    </div>
+    <div class="sidebar-item">
+        <div class="sidebar-item__body sidebar-item__body--alone">
+            <div class="sidebar-link-block" style="background-image: url(./img/eleague.jpg)">
+                <h3 class="sidebar-link-block__header">ELEAGUE Major 2017</h3>
+                <a class="sidebar-link-block__link" href="http://www.eleague.com/major/"><span>ELEAGUE Major 2017</span></a>
             </div>
-            <div class="b-header" style="background-image: url(./img/cybersportru.jpg)">
-                <h3 class="bh-header">Путь в киберспорт. Моя статья</h3>
-                <a class="bh-link" href="https://www.cybersport.ru/participate/blogosphere/fan-blog/199902/"></a>
+            <div class="sidebar-link-block" style="background-image: url(./img/cybersportru.jpg)">
+                <h3 class="sidebar-link-block__header">Путь в киберспорт. Моя статья</h3>
+                <a class="sidebar-link-block__link" href="https://www.cybersport.ru/participate/blogosphere/fan-blog/199902/">
+                    <span>Путь в киберспорт. Моя статья</span>
+                </a>
             </div>
-            <div class="b-header" style="background-image: url(./img/csgo_image.png)">
-                <h3 class="bh-header">Блог cs go</h3>
-                <a class="bh-link" href="http://blog.counter-strike.net"></a>
-            </div>
-            <div class="b-header" style="background-color: #000">
-                <h3 class="bh-header">А тут место для вашей рекламы =)</h3>
+            <div class="sidebar-link-block sidebar-link-block--last" style="background-image: url(./img/csgo_image.png)">
+                <h3 class="sidebar-link-block__header">Блог cs go</h3>
+                <a class="sidebar-link-block__link" href="http://blog.counter-strike.net">
+                    <span>Блог cs go</span>
+                </a>
             </div>
         </div>
     </div>
-</div>
+    <div class="sidebar-item sidebar-item--last">
+        <div class="sidebar-item__header">
+            <h3>Очень важное сообщение</h3>
+        </div>
+        <div class="sidebar-item__body">
+            <p class="sidebar-item__paragraph sidebar-item__paragraph--last">А тут место для Вашей рекламы! =Ъ</p>
+        </div>
     </div>
-    <div class="row">
-        <div class="footer">
-    <p>Road2eSports, 2017</p>
 </div>
+        </div>
     </div>
+    <div class="layout-row">
+        <div class="layout-col">
+            <div class="footer">
+    <div class="footer__body">Road2eSports, 2017</div>
+</div>
+        </div>
+    </div>
+    
 </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

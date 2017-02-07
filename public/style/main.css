@@ -510,11 +510,12 @@ html {
     .nav__toggler:hover {
       background-color: #455A64; }
   .nav__links {
+    font-size: 0;
     position: absolute;
     right: 0;
     top: 0;
     text-align: right;
-    line-height: 3em;
+    line-height: 3rem;
     z-index: 12; }
   .nav__toggle {
     background-color: #37474f;
@@ -543,7 +544,7 @@ html {
       border-bottom: 1px solid #263238; }
     .nav__link--inline {
       display: inline-block;
-      padding: 0 0.9375em; }
+      padding: 0 0.8em; }
     .nav__link--last {
       line-height: 3em;
       border-bottom: none; }
@@ -585,12 +586,17 @@ html {
   font-size: 1em;
   padding-top: 2em;
   padding-bottom: 2em; }
+  .header__link {
+    color: #212121; }
+    .header__link span {
+      color: #F44336; }
+    .header__link:hover, .header__link:visited, .header__link:active, .header__link:focus {
+      color: #212121;
+      text-decoration: none; }
   .header h1 {
     color: #212121;
     text-align: center;
     margin-bottom: 0; }
-    .header h1 span {
-      color: #F44336; }
 
 .sidebar {
   margin-top: 10px; }

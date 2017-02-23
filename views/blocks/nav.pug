@@ -1,0 +1,29 @@
+- var navLinkClass = ["nav__link", "nav__link--inline"]
+- var navLinkItemClass = ["nav__link", "nav__link--li"]
+- var curUrl = "";
+div.nav-layout
+    nav.nav.container
+        div(class="nav__top row")
+            button(id="nav-toggler" class="nav__toggler" tabindex="-1")
+                img(img src="/img/menu.png" height="20" alt="menu button")
+        div(class="nav__links")
+            a(class=navLinkClass tabindex="-1" href="/")
+                img(src="/img/home.png" height="20" alt="home icon")
+            a(class=navLinkClass tabindex="-1" href="https://vk.com/road2esports")
+                img(src="/img/vk_icon_sm.png" height="20" alt="vk icon")
+            a(class=navLinkClass tabindex="-1" href="https://www.twitch.tv/linkolnlk")
+                img(src="/img/twitch_icon_sm.png" height="20" alt="twitch icon")
+            a(class=navLinkClass tabindex="-1" href="https://www.youtube.com/channel/UCvYMnJMW0jpikbXUhzY5VLw")
+                img(src="/img/ytube_icon_sm.png" height="20" alt="youtube icon")
+        div(id="toggle-block" class="nav__toggle row")
+            ul(class="nav__list")
+                li(class="nav__item")
+                    a(class=navLinkItemClass class={'nav__link--active': curUrl === "/blog"} href="/blog.html") БЛОГ
+                li(class="nav__item")
+                    a(class=navLinkItemClass class={'nav__link--active': curUrl === "/about"} href="/about.html") О ПРОЕКТЕ
+                li(class="nav__item")
+                    a(class=navLinkItemClass class={'nav__link--active': curUrl === "/donations"} href="/donations.html") ДОНАТ
+                li(class="nav__item")
+                    a(class=navLinkItemClass class={'nav__link--active': curUrl === "/watch"} href="/watch.html") СМОТРЕТЬ
+                li(class="nav__item")
+                    a(class=navLinkItemClass class={'nav__link--active': curUrl === "/skins"} href="/skins.html") МОИ СКИНЫ                                                               

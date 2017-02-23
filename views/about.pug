@@ -1,0 +1,15 @@
+extends layouts/main.pug
+
+prepend nav
+    - var curUrl = "/about";
+
+block content
+    div.page-layout.container
+        div.row
+            div.col.page-col-main
+                include content/about/main.pug
+            div.col.page-col-aside
+                include content/about/aside.pug
+        div.row
+            div.col
+                include blocks/footer.pug

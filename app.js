@@ -5,8 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var about = require('./routes/about');
+let index = require('./routes/index');
+let about = require('./routes/about');
+let posts = require('./routes/posts');
 
 var app = express();
 
@@ -22,18 +23,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use("/about", about)
-//app.use('/users', users);
+//
+// МАРШРУТИЗАЦИЯ ЗАПРОСОВ
+//
 
-// catch 404 and forward to error handler
+app.use('/', index);
+app.use("/about", about);
+app.use("/posts", posts);
+
+//
+// 404
+//
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-// error handler
+//
+// ОБРАБОТКА ОШИБОК
+///
+
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -43,5 +54,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+setInterval(()=> {
+  var mem = process.memoryUsage();
+  console.log(`rss: ${(mem.rss/1024)/1024} M; heapT: ${(mem.heapTotal/1024)/1024}M; heapU: ${(mem.heapUsed/1024)/1024}M`);
+}, 2000);
 
 module.exports = app;

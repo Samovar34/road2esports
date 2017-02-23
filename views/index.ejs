@@ -9,28 +9,7 @@
     <link rel="stylesheet" href="./style/main.css">
   </head>
   <body>
-    <div class="nav-layout">
-    <nav class="nav">
-        <div class="nav__top">
-            <button id="nav-toggler" class="nav__toggler" tabindex="-1"><img src="./img/menu.png" height="20" alt="menu button"></button>
-        </div>
-        <div class="nav__links">
-                <a class="nav__link nav__link--inline" tabindex="-1" href="/"><img src="/img/home.png" height="20" alt="home icon"></a>
-                <a class="nav__link nav__link--inline" tabindex="-1" href="https://vk.com/road2esports"><img src="./img/vk_icon_sm.png" height="20" alt="vk icon"></a>
-                <a class="nav__link nav__link--inline" tabindex="-1" href="https://www.twitch.tv/linkolnlk"><img src="./img/twitch_icon_sm.png" height="20" alt="twitch icon"></a>
-                <a class="nav__link nav__link--inline" tabindex="-1" href="https://www.youtube.com/channel/UCvYMnJMW0jpikbXUhzY5VLw"><img src="./img/ytube_icon_sm.png" height="20" alt="youtube icon"></a>
-        </div>
-        <div id="toggle-block" class="nav__toggle">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">БЛОГ</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--li" href="./about">О ПРОЕКТЕ</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">ДОНАТ</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--li" href="javascript:void(0);">СМОТРЕТЬ</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--li nav__link--last" href="javascript:void(0);">МОИ СКИНЫ</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+      <%- include("blocks/nav", {blog: "", about: "", don: "", watch: "", my: ""}); %>
     <div class="header-layout layout-base">
     <div class="layout-row">
         <div class="layout-col">

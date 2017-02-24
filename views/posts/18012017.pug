@@ -1,0 +1,30 @@
+extends ../layouts/main.pug
+
+block content
+    div.page-layout.container
+        div.row
+            div.col.page-col-main
+                .block
+                    .block__header(style="background-image: url(/img/csgoteams.jpg)")
+                    .block__body
+                        div
+                            span.block__date 18 января 2017
+                        h2.block__h2 Pick'Em
+                        p.block__p
+                            include 18012017/text_01.txt
+                        p.block__p
+                            include 18012017/text_02.txt
+                        p.block__p
+                            include 18012017/text_03.txt
+                        p.block__p
+                            include 18012017/text_04.txt
+                        p.block__p.block__p--last  Скрины своих пиков и своё мнение оставляйте в комментариях, будет интересно посмотреть.
+                        p.block__p До "ELEAGUE Major 2017" осталось 5 дней😏
+                        p.block__p
+                            img(class="fluid-img" src="http://s56.radikal.ru/i154/1702/27/4d2970afa275.jpg" alt="figure")
+                        p.block__p.block__p--last From LinkoLnLK with love&lt3
+            div.col.page-col-aside
+                include ../content/blog/aside.pug
+        div.row
+            div.col
+                include ../blocks/footer.pug

@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 let index = require('./routes/index');
 let about = require('./routes/about');
-let posts = require('./routes/posts');
+let blog = require('./routes/blog');
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use("/about", about);
-app.use("/posts", posts);
+app.use("/blog", blog);
 
 //
 // 404
@@ -55,9 +55,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-setInterval(()=> {
-  var mem = process.memoryUsage();
-  console.log(`rss: ${(mem.rss/1024)/1024} M; heapT: ${(mem.heapTotal/1024)/1024}M; heapU: ${(mem.heapUsed/1024)/1024}M`);
-}, 2000);
+// setInterval(()=> {
+//   var mem = process.memoryUsage();
+//   console.log(`rss: ${(mem.rss/1024)/1024} M; heapT: ${(mem.heapTotal/1024)/1024}M; heapU: ${(mem.heapUsed/1024)/1024}M`);
+// }, 2000);
 
 module.exports = app;

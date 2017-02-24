@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+block content
+    div.page-layout.container
+        div.row
+            div.col.page-col-main
+                .block
+                    .block__header(style="background-image: url(/img/csgoarena.jpg)")
+                    .block__body
+                        div
+                            span.block__date 13 января 2017
+                        h2.block__h2 Начало пути
+                        .block__p
+                            include 13012017/text_01.txt
+                        .block__p
+                            include 13012017/text_02.txt
+                        .block__p.block__p--last From LinkoLnLK with love&lt3                 
+            div.col.page-col-aside
+                include ../content/blog/aside.pug
+        div.row
+            div.col
+                include ../blocks/footer.pug

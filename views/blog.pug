@@ -4,9 +4,12 @@ block content
     div.page-layout.container
         div.row
             div.col.page-col-main
-                include content/about/main.pug
+                include content/blog/main.pug
             div.col.page-col-aside
-                include content/about/aside.pug
+                include content/blog/aside.pug
+        div.row
+            .col
+                include content/blog/pager.pug
         div.row
             div.col
                 include blocks/footer.pug

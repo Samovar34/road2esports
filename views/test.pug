@@ -1,0 +1,10 @@
+div
+    each val, index in values.data
+        h2 #{val.header}
+        p #{val.text}
+div
+    case values.flag
+        when "last"
+            p it's last
+        default
+            p it's default

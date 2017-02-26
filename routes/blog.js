@@ -2,17 +2,36 @@ const express = require('express');
 const router = express.Router();
 const path = require("path");
 const fs = require("fs");
+const resourceReader = require("../libs/resourceReader");
 
 const pug = require("pug");
 
 // TODO кеширование запросов, которые завершились успешно
 let cache ={};
 
+// пейджинг страниц
+router.use("/:name", (req, res, next) => {
+    resourceReader.get(req.params.name, (err, data) => {
+        if (err) {
+            next(err);
+        } else {
+            res._blogData = data;
+            next();
+        }
+    })
+});
+
 /* GET blog page. */
-router.get('/', function(req, res, next) {
+router.get("/", function(req, res, next) {
   // отобразить все записи с пейджингом
-  res.render('blog', { curUrl: "/blog" });
+  res.render('blog', { curUrl: "/blog"});
   res.end("blog");
+});
+
+router.get("/:name", (req, res, next) => {
+    res.render("test", {
+        values: res._blogData
+    });
 });
 
 // read post

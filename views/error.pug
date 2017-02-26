@@ -1,3 +1,25 @@
-h1 #{message}
-h2 #{error.status}
-pre #{error.stack}
+extends layouts/main.pug
+
+block content
+    div.container
+        div.row
+            div.col
+                case error.status
+                    when 404
+                        h1 #{error.status} 
+                        div
+                            img.fluid-img(src="/img/errors/404.png" alt="ошибка 404")
+                            p Страница не найдена
+                    default
+                        h1 #{error.status}
+                        div
+                            img.fluid-img(src="/img/errors/500.png" alt="ошибка 500")
+                            p Опа! Кажись что-то сломалось.
+        div.row
+            div.col
+                h1 #{message}
+                h2 #{error.status}
+                pre #{error.stack}
+        div.row
+            div.col
+                include blocks/footer.pug

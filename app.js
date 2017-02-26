@@ -51,13 +51,14 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
+  err.status = err.status || 500;
   res.status(err.status || 500);
   res.render('error');
 });
 
-// setInterval(()=> {
-//   var mem = process.memoryUsage();
-//   console.log(`rss: ${(mem.rss/1024)/1024} M; heapT: ${(mem.heapTotal/1024)/1024}M; heapU: ${(mem.heapUsed/1024)/1024}M`);
-// }, 2000);
+setInterval(()=> {
+  var mem = process.memoryUsage();
+  console.log(`rss: ${(mem.rss/1024)/1024} M; heapT: ${(mem.heapTotal/1024)/1024}M; heapU: ${(mem.heapUsed/1024)/1024}M`);
+}, 15000);
 
 module.exports = app;

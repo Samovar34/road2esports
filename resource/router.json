@@ -1,3 +1,6 @@
 {
-    "root": "posts/0"
+    "paths": [
+        "/posts/1",
+        "/posts/0"
+    ]
 }

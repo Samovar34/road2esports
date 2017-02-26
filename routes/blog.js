@@ -6,32 +6,35 @@ const resourceReader = require("../libs/resourceReader");
 
 const pug = require("pug");
 
-let postRouter = null;
+let postRouter = require("../resource/router.json");
 
 // TODO кеширование запросов, которые завершились успешно
 let cache ={};
 
-// конфигурация маршрутизации
+
+// маршрутизация по спискам блогов
 router.use("/page/:name", (req, res, next) => {
-    if (!postRouter) {
-        postRouter = resourceReader.get("router", (err, data) => {
-            if (err) {
-                next(err);
-            } else {
-                postRouter = data;
-                next();
-            }
-        });
+    let param = parseFloat(req.params.name);
+
+    // если не верный параметр => 404
+    if (isNaN(param)) {
+        let err = new Error("Not found");
+        err.status = 404;
+        next(err);
+        return;
     } else {
-        next();
+        param = Math.abs(param);
     }
-});
 
+    if (param > 0) {
+        param -= 1;
+    } else {
+        param = 0;
+    }
 
-// маршрутизация
-router.use("/page/:name", (req, res, next) => {
+    
 
-    resourceReader.get(postRouter[req.params.name], (err, data) => {
+    resourceReader.get(postRouter.paths[param], (err, data) => {
         if (err) {
             next(err);
         } else {
@@ -44,8 +47,13 @@ router.use("/page/:name", (req, res, next) => {
 /* GET blog page. */
 router.get("/", function(req, res, next) {
   // отобразить все записи с пейджингом
-  res.render('blog', { curUrl: "/blog"});
-  res.end("blog");
+    resourceReader.get(postRouter.paths[0], (err, data) => {
+        if (err) {
+            next(err);
+        } else {
+            res.render('blog', { curUrl: "/blog", values: data});
+        }
+    });
 });
 
 router.get("/page/:name", (req, res, next) => {

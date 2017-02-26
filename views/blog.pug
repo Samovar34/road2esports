@@ -4,7 +4,17 @@ block content
     div.page-layout.container
         div.row
             div.col.page-col-main
-                include content/blog/main.pug
+                each val, index in values.data
+                    div.block
+                        div.block__header(style={"background-image": val.img})
+                        div.block__body
+                            div
+                                span.block__date #{val.date}
+                            h2.block__h2 #{val.header}
+                            div !{val.text}
+                        if (val.url) 
+                            div.block__footer
+                                a(class="block__footer-link" href=val.url) читать полностью
             div.col.page-col-aside
                 include content/blog/aside.pug
         div.row

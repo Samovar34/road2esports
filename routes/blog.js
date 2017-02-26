@@ -6,19 +6,39 @@ const resourceReader = require("../libs/resourceReader");
 
 const pug = require("pug");
 
+let postRouter = null;
+
 // TODO кеширование запросов, которые завершились успешно
 let cache ={};
 
-// пейджинг страниц
-router.use("/:name", (req, res, next) => {
-    resourceReader.get(req.params.name, (err, data) => {
+// конфигурация маршрутизации
+router.use("/page/:name", (req, res, next) => {
+    if (!postRouter) {
+        postRouter = resourceReader.get("router", (err, data) => {
+            if (err) {
+                next(err);
+            } else {
+                postRouter = data;
+                next();
+            }
+        });
+    } else {
+        next();
+    }
+});
+
+
+// маршрутизация
+router.use("/page/:name", (req, res, next) => {
+
+    resourceReader.get(postRouter[req.params.name], (err, data) => {
         if (err) {
             next(err);
         } else {
             res._blogData = data;
             next();
         }
-    })
+    });
 });
 
 /* GET blog page. */
@@ -28,8 +48,9 @@ router.get("/", function(req, res, next) {
   res.end("blog");
 });
 
-router.get("/:name", (req, res, next) => {
+router.get("/page/:name", (req, res, next) => {
     res.render("test", {
+        curUrl: "/blog",
         values: res._blogData
     });
 });

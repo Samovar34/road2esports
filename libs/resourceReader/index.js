@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-let resouseRoot = "./resourse/";
+let resouseRoot = "./resource/";
 const cache = {};
 
 
